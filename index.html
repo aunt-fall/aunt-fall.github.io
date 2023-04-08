@@ -71,6 +71,74 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-通过查看Qt助手（QtAssistant）了解并使用自己想要Qt库函数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/04/08/%E9%80%9A%E8%BF%87%E6%9F%A5%E7%9C%8BQt%E5%8A%A9%E6%89%8B%EF%BC%88QtAssistant%EF%BC%89%E4%BA%86%E8%A7%A3%E5%B9%B6%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E6%83%B3%E8%A6%81Qt%E5%BA%93%E5%87%BD%E6%95%B0/" class="article-date">
+  <time class="dt-published" datetime="2023-04-08T08:18:26.518Z" itemprop="datePublished">2023-04-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="通过查看Qt助手（QtAssistant）了解并使用自己想要Qt库函数"><a href="#通过查看Qt助手（QtAssistant）了解并使用自己想要Qt库函数" class="headerlink" title="通过查看Qt助手（QtAssistant）了解并使用自己想要Qt库函数"></a>通过查看Qt助手（QtAssistant）了解并使用自己想要Qt库函数</h3><h4 id="常用库"><a href="#常用库" class="headerlink" title="常用库"></a>常用库</h4><p>我们需要知道常用的库有哪些，我们才能使用他们。</p>
+<h5 id="QtCore基本库"><a href="#QtCore基本库" class="headerlink" title="QtCore基本库"></a>QtCore基本库</h5><ul>
+<li><p>基本数据类型：QString(不直接使用c++ 中String)、QByteArray（字节数组）</p>
+</li>
+<li><p>基本数据结构：QList、QVector、QMap</p>
+</li>
+<li><p>输入输出类：QTextStream（文本流）、QFile（文件类）</p>
+</li>
+<li><p>多线程编程用到的类：QThread（多线程）、QWaitCondition（条件等待）</p>
+</li>
+<li><p>QtGui GUI库：包含图形窗口类</p>
+</li>
+</ul>
+<h5 id="窗口部件类：QWidget、QLabel、QPushButton"><a href="#窗口部件类：QWidget、QLabel、QPushButton" class="headerlink" title="窗口部件类：QWidget、QLabel、QPushButton"></a>窗口部件类：QWidget、QLabel、QPushButton</h5><ul>
+<li>布局类：QVBoxLayout、QHBoxLayout、QGridLayout</li>
+<li>主窗口类：QMainWindow、QMenu</li>
+<li>绘图类：QPainter、QPen、QBrush</li>
+<li>基本对话框类：QFileDialog、QprintDialog</li>
+</ul>
+<h6 id="通过Qt助手使库，以QPainter（绘画事件）为例。"><a href="#通过Qt助手使库，以QPainter（绘画事件）为例。" class="headerlink" title="通过Qt助手使库，以QPainter（绘画事件）为例。"></a>通过Qt助手使库，以QPainter（绘画事件）为例。</h6><p>在搜索栏中搜索QPainter。（标红处为搜索栏）<img src="C:\Users\335歌神\AppData\Roaming\Typora\typora-user-images\image-20230408155430570.png" alt="image-20230408155430570" style="zoom: 200%;" /></p>
+<p>我们注意到QPainter是一个类，意味着他是一个可创建对象</p>
+<p><img src="C:\Users\335歌神\AppData\Roaming\Typora\typora-user-images\image-20230408155626019.png" alt="image-20230408155626019"></p>
+<p>在Public Functions找到他的构造函数，构造函数有多个，我们选<a href="qpainter.html#QPainter-1">QPainter</a>(QPaintDevice *<em>device</em>)</p>
+<p><img src="C:\Users\335歌神\AppData\Roaming\Typora\typora-user-images\image-20230408155809212.png" alt="image-20230408155809212"></p>
+<p>如果不知道参数QPaintDevice *<em>device</em>，我们可以复制粘贴到搜索框通过其描述获知其功能。<img src="C:\Users\335歌神\AppData\Roaming\Typora\typora-user-images\image-20230408160238028.png" alt="image-20230408160238028"></p>
+<p>阅读其描述得知我们要在这个参数所指对象上绘画。了解完成后返回QPainter（返回的快捷键是键盘上的删除键，即“×”）</p>
+<p>此时我们已经了解了如何创建一个QPainter对象了，为了方便说明我们创建一个实例对象 QPainter painter；除构造函数以外，painter可以调用Public Functions的所有函数。</p>
+<p>以调用setPen(const <a href="qpen.html">QPen</a> &amp;<em>pen</em>)为例子</p>
+<p><img src="C:\Users\335歌神\AppData\Roaming\Typora\typora-user-images\image-20230408160831954.png" alt="image-20230408160831954"></p>
+<p>如果你不清楚setPen的功能，直接点进去了解setPen(const <a href="qpen.html">QPen</a> &amp;<em>pen</em>)的相关细节，字母为绿色的均可点击了解详情。</p>
+<p><img src="C:\Users\335歌神\AppData\Roaming\Typora\typora-user-images\image-20230408161037117.png" alt="image-20230408161037117"></p>
+<p>如果不知道QPen是什么，我们可以复制粘贴到搜索框通过其描述获知其功能。</p>
+<p>如果不知道如何构建QPen实例，点击Detailed Description查看相应细节。</p>
+<p><img src="C:\Users\335歌神\AppData\Roaming\Typora\typora-user-images\image-20230408161342872.png" alt="image-20230408161342872"></p>
+<p>QPen的构建方法如图所示</p>
+<p><img src="C:\Users\335歌神\AppData\Roaming\Typora\typora-user-images\image-20230408161430449.png" alt="image-20230408161430449"></p>
+<p>如果想要了解更多参数，比如，颜色参数，将Qt::green输入搜索栏，可查询到更多同类参数。其他参数同理。</p>
+<p><img src="C:\Users\335歌神\AppData\Roaming\Typora\typora-user-images\image-20230408161619790.png" alt="image-20230408161619790"></p>
+<p>这样我们就知道如何创建一个QPen类，创建一个QPen类，然后将其传入setPen，至此函数调用完成。</p>
+<p>其他函数的使用方法类似。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/04/08/%E9%80%9A%E8%BF%87%E6%9F%A5%E7%9C%8BQt%E5%8A%A9%E6%89%8B%EF%BC%88QtAssistant%EF%BC%89%E4%BA%86%E8%A7%A3%E5%B9%B6%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E6%83%B3%E8%A6%81Qt%E5%BA%93%E5%87%BD%E6%95%B0/" data-id="clg7pg2ps000010v91jji2p6x" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-typora相关信息" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/02/19/typora%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/" class="article-date">
@@ -376,7 +444,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
     </div>
   </div>
 
@@ -387,6 +455,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/04/08/%E9%80%9A%E8%BF%87%E6%9F%A5%E7%9C%8BQt%E5%8A%A9%E6%89%8B%EF%BC%88QtAssistant%EF%BC%89%E4%BA%86%E8%A7%A3%E5%B9%B6%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E6%83%B3%E8%A6%81Qt%E5%BA%93%E5%87%BD%E6%95%B0/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2023/02/19/typora%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/">typora相关信息</a>
@@ -402,10 +474,6 @@
         
           <li>
             <a href="/2023/01/10/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%8F%8A%E5%85%B6%E5%8F%98%E7%A7%8D/">二分查找及其变种</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/10/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/">博客相关知识</a>
           </li>
         
       </ul>
